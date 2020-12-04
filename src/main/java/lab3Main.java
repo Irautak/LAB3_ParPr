@@ -56,11 +56,7 @@ public class lab3Main {
 
     }
 
-    public String removeQuot(String str) {
-        final String QUOT = "\"";
-        final String EMPTY_STR = "";
-        return str.replace(QUOT, EMPTY_STR);
-    }
+
 
 
 }
