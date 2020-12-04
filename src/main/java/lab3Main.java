@@ -3,6 +3,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
 
+import java.util.Iterator;
 import java.util.Map;
 
 import static java.lang.Math.max;
@@ -15,7 +16,7 @@ public class lab3Main {
                 sc.textFile("file.csv")
                     .zipWithIndex()
                     .filter(lineWithInd -> lineWithInd._2() != 0)
-                    .map(lineWithInd -> getAirportObj(lineWithInd._1()))
+                    .map(lineWithInd -> AirportTextObj(lineWithInd._1()))
                     .mapToPair(airport -> new Tuple2<>(airport.getID(), airport.getName()))
                     .collectAsMap());
 
@@ -23,7 +24,7 @@ public class lab3Main {
         sc.textFile("sample.csv")
                 .zipWithIndex()
                 .filter(lineWithInd -> lineWithInd._2() != 0)
-                .map(lineWithInd -> getFlightObj(lineWithInd._1()))
+                .map(lineWithInd -> FlightTextObj(lineWithInd._1()))
                 .mapToPair(flight -> new Tuple2<>(
                                             new Tuple2<>(flight.getOriginID(), flight.getDestID()),
                                             new FlightInfoSer(flight.getDelayTime(), flight.getCancelled())
@@ -54,5 +55,12 @@ public class lab3Main {
                 .saveAsTextFile("lab3_output");
 
     }
+
+    public String removeQuot(String str) {
+        final String QUOT = "\"";
+        final String EMPTY_STR = "";
+        return str.replace(QUOT, EMPTY_STR);
+    }
+
 
 }
