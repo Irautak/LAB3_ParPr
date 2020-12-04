@@ -16,7 +16,7 @@ public class lab3Main {
                 sc.textFile("file.csv")
                     .zipWithIndex()
                     .filter(lineWithInd -> lineWithInd._2() != 0)
-                    .map(lineWithInd -> AirportTextObj(lineWithInd._1()))
+                    .map(lineWithInd -> AirportTextObj.AirportTextObj(lineWithInd._1()))
                     .mapToPair(airport -> new Tuple2<>(airport.getID(), airport.getName()))
                     .collectAsMap());
 
@@ -24,7 +24,7 @@ public class lab3Main {
         sc.textFile("sample.csv")
                 .zipWithIndex()
                 .filter(lineWithInd -> lineWithInd._2() != 0)
-                .map(lineWithInd -> FlightTextObj(lineWithInd._1()))
+                .map(lineWithInd -> FlightTextObj.FlightTextObj(lineWithInd._1()))
                 .mapToPair(flight -> new Tuple2<>(
                                             new Tuple2<>(flight.getOriginID(), flight.getDestID()),
                                             new FlightInfoSer(flight.getDelayTime(), flight.getCancelled())
