@@ -2,7 +2,7 @@ public class AirportTextObj {
     final String[] strings;
     static private int AIRPORT_ID = 0;
     static private int AIRPORT_NAME = 1;
-    static private String COMMA_QUOT = ",[\"]";
+    static private String COMMA = ",";
     static private String QUOT = "\"";
     static private String EMPTY_STR = "";
     private AirportTextObj(String line, String delim) {
@@ -10,7 +10,7 @@ public class AirportTextObj {
     }
 
     static AirportTextObj AirportTextObj(String line) {
-        return new AirportTextObj(line, COMMA_QUOT);
+        return new AirportTextObj(line, COMMA);
     }
 
     public long getID() {
