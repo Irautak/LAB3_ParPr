@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19e59014-f9f0-46ff-adaa-2200c02dbebf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/AirportTextObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AirportTextObj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlightTextObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlightTextObj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab3Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab3Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="19e59014-f9f0-46ff-adaa-2200c02dbebf" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
