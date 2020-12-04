@@ -26,7 +26,7 @@ public class lab3Main {
                 .map(lineWithInd -> getFlightObj(lineWithInd._1()))
                 .mapToPair(flight -> new Tuple2<>(
                                             new Tuple2<>(flight.getOriginID(), flight.getDestID()),
-                                            new FlightInfoSer(flight.getDelayTime(), flight.getIfCancelled())
+                                            new FlightInfoSer(flight.getDelayTime(), flight.getCancelled())
                         )
                 )
                 .groupByKey()
@@ -40,7 +40,7 @@ public class lab3Main {
                                 countDel++;
                             }
                             maxDelTime = max(maxDelTime, delTime);
-                            countCancelled += nextInfo.getIfCancelled();
+                            countCancelled += nextInfo.getCancelled();
                             count++;
                         }
                         return  new Tuple2<>(
