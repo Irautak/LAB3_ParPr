@@ -21,7 +21,7 @@ public class lab3Main {
                     .collectAsMap());
 
 
-        sc.textFile("sample.csv")
+        sc.textFile("664600583_T_ONTIME_sample.csv")
                 .zipWithIndex()
                 .filter(lineWithInd -> lineWithInd._2() != 0)
                 .map(lineWithInd -> FlightTextObj.FlightTextObj(lineWithInd._1()))
