@@ -13,7 +13,7 @@ public class lab3Main {
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
         final Broadcast<Map<Long, String>> airportsBroadcasted = sc.broadcast(
-                sc.textFile("file.csv")
+                sc.textFile("L_AIRPORT_ID.csv")
                     .zipWithIndex()
                     .filter(lineWithInd -> lineWithInd._2() != 0)
                     .map(lineWithInd -> AirportTextObj.AirportTextObj(lineWithInd._1()))
